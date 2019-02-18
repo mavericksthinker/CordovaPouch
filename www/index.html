@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="unsafe-inline 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <title>HOTTAB POS</title>
+    </head>
+    <body>
+        <div class="app">
+            <div id="deviceready" class="blink">
+            </div>
+        </div>
+        <section id="todoapp">
+            <header id="header">
+                <h1>Pouch Client</h1>
+                <input type = 'number' min="0" max="65535" id="new-todo" placeholder="Server is running on port : 3000" autofocus>
+            </header>
+            <section id="main">
+                <ul id="todo-list"></ul>
+            </section>
+            <footer id="footer">
+                <span id="todo-count"></span>
+                <div align = 'center ' id="sync-wrapper">
+                    <div id="sync-success">Server Online</div>
+                    <div id="sync-error">Server Offline. Initiating...</div>
+                </div>
+            </footer>
+        </section>
+        <br>
+          <footer id='footers'>
+            <div class="svg-wrapper">
+                <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="shape" height="60" width="320" ></rect>
+                </svg>
+                <div align ='center' id = 'ip' onclick="obtainIp()" class="text">Ip Address</div>
+            </div>
+              <br>
+              <div id ='fauxton' style="cursor: pointer;" onclick="window.location='http://localhost:3000/_utils';" class="svg-wrapper">
+                  <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                      <rect class="shape" height="60" width="320" ></rect>
+                  </svg>
+                  <div align ='center' class="text">Access Fauxton</div>
+              </div>
+              <br>
+                  <div id = 'client' onclick="backupClient()" class="container-fluid">
+                      <div class="row">
+                          <div id="ms-container">
+                              <label for="ms-download">
+                                  <div class="ms-content">
+                                      <div class="ms-content-inside">
+                                          <input type="checkbox" id="ms-download" />
+                                          <div class="ms-line-down-container">
+                                              <div class="ms-line-down"></div>
+                                          </div>
+                                          <div class="ms-line-point"></div>
+                                      </div>
+                                  </div>
+                              </label>
+                          </div>
+                      </div>
+                  </div>
+          </footer>
+        <footer>
+        <div id = 'server'>
+            <button type="button" onclick="backupServer()" class="icon">
+                <div class="cloud">
+                    <div class="puff puff-1"></div>
+                    <div class="puff puff-2"></div>
+                    <div class="puff puff-3"></div>
+                    <div class="puff puff-4"></div>
+                    <div class="puff puff-5"></div>
+                    <div class="puff puff-6"></div>
+                    <div class="puff puff-7"></div>
+                    <div class="puff puff-8"></div>
+                    <div class="puff puff-9"></div>
+                    <div class="puff puff-10"></div>
+                    <div class="cloud-core"></div>
+                    <div class="check"></div>
+                    <div class="arrow">
+                        <div class="arrow-stem">
+                            <div class="arrow-l-tip"></div>
+                            <div class="arrow-r-tip"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preload">
+                    <div class="drop drop-1"></div>
+                    <div class="drop drop-2"></div>
+                    <div class="drop drop-3"></div>
+                </div>
+                <div class="progress"></div>
+            </button>
+        </div>
+        </footer>
+        <script src="js/pouchdb.js"></script>
+        <script src="js/pouchdb.replication-stream.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

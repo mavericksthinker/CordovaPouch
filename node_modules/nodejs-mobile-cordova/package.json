@@ -1,0 +1,69 @@
+{
+  "_from": "git+https://github.com/janeasystems/nodejs-mobile-cordova.git#staging-babel-UI-runtime",
+  "_id": "nodejs-mobile-cordova@0.2.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/nodejs-mobile-cordova",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/janeasystems/nodejs-mobile-cordova#staging-babel-UI-runtime",
+    "rawSpec": "https://github.com/janeasystems/nodejs-mobile-cordova#staging-babel-UI-runtime",
+    "saveSpec": "git+https://github.com/janeasystems/nodejs-mobile-cordova.git#staging-babel-UI-runtime",
+    "fetchSpec": "https://github.com/janeasystems/nodejs-mobile-cordova.git",
+    "gitCommittish": "staging-babel-UI-runtime"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/janeasystems/nodejs-mobile-cordova.git#cced80d1e2a07897e1651b343ebb08c5b0431f06",
+  "_spec": "https://github.com/janeasystems/nodejs-mobile-cordova#staging-babel-UI-runtime",
+  "_where": "/home/hottab/Documents/CordovaApps/test",
+  "author": {
+    "name": "janeasystems"
+  },
+  "bugs": {
+    "url": "https://github.com/janeasystems/nodejs-mobile/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "nodejs-mobile-cordova",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {
+    "nodejs-mobile-gyp": "^0.2.0",
+    "tar.gz2": "^1.0.0"
+  },
+  "deprecated": false,
+  "description": "Node.js for Mobile Apps Cordova plugin",
+  "engines": {
+    "cordovaDependencies": {
+      ">=0.1.0": {
+        "cordova-android": ">=6.2.1",
+        "cordova-ios": ">=4.4.0"
+      }
+    }
+  },
+  "homepage": "https://code.janeasystems.com/nodejs-mobile",
+  "keywords": [
+    "cordova",
+    "mobile",
+    "nodejs",
+    "node.js",
+    "nodejs-mobile",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "nodejs-mobile-cordova",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janeasystems/nodejs-mobile-cordova.git"
+  },
+  "version": "0.2.1"
+}

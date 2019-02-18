@@ -1,0 +1,3 @@
+/home/hottab/Documents/CordovaApps/test/platforms/android/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/hottab/Documents/CordovaApps/test/platforms/android/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/home/hottab/Documents/CordovaApps/test/platforms/android/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/nodejs-mobile-cordova-native-lib.dir

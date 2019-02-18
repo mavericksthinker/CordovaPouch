@@ -1,0 +1,1014 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  /*-moz-appearance: none;*/
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+body {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  background: #eaeaea url('bg.png');
+  color: #4d4d4d;
+  width: 550px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+#todoapp {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 130px 0 40px 0;
+  border: 1px solid #ccc;
+  position: relative;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+				0 25px 50px 0 rgba(0, 0, 0, 0.15);
+}
+
+#todoapp:before {
+  content: '';
+  border-left: 1px solid #f5d6d6;
+  border-right: 1px solid #f5d6d6;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  height: 100%;
+}
+
+#todoapp input::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+#todoapp input:-moz-placeholder {
+  font-style: italic;
+  color: #a9a9a9;
+}
+
+#todoapp h1 {
+  position: absolute;
+  top: -90px;
+  width: 100%;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  color: #b3b3b3;
+  color: rgba(255, 255, 255, 0.3);
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
+
+#header {
+  padding-top: 15px;
+  border-radius: inherit;
+}
+
+#header:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 15px;
+  z-index: 2;
+  border-bottom: 1px solid #6c615c;
+  background: #8d7d77;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(132, 110, 100, 0.8)),to(rgba(101, 84, 76, 0.8)));
+  background: -webkit-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+  background: -moz-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+  background: -o-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+  background: -ms-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+  background: linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#9d8b83', EndColorStr='#847670');
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+}
+
+#new-todo,
+.edit {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  line-height: 1.4em;
+  border: 0;
+  outline: none;
+  color: inherit;
+  padding: 6px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+#new-todo {
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.02);
+  z-index: 2;
+  box-shadow: none;
+}
+
+#main {
+  position: relative;
+  z-index: 2;
+  border-top: 1px dotted #adadad;
+}
+
+label[for='toggle-all'] {
+  display: none;
+}
+
+#toggle-all {
+  position: absolute;
+  top: -42px;
+  left: -4px;
+  width: 40px;
+  text-align: center;
+  border: none; /* Mobile Safari */
+}
+
+#toggle-all:before {
+  content: '»';
+  font-size: 28px;
+  color: #d9d9d9;
+  padding: 0 25px 7px;
+}
+
+#toggle-all:checked:before {
+  color: #737373;
+}
+
+#todo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#todo-list li {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px dotted #ccc;
+}
+
+#todo-list li:last-child {
+  border-bottom: none;
+}
+
+#todo-list li.editing {
+  border-bottom: none;
+  padding: 0;
+}
+
+#todo-list li.editing .edit {
+  display: block;
+  width: 506px;
+  padding: 13px 17px 12px 17px;
+  margin: 0 0 0 43px;
+}
+
+#todo-list li.editing .view {
+  display: none;
+}
+
+#todo-list li .toggle {
+  text-align: center;
+  width: 40px;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none; /* Mobile Safari */
+  -webkit-appearance: none;
+  /*-moz-appearance: none;*/
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+#todo-list li .toggle:after {
+  content: '✔';
+  line-height: 43px; /* 40 + a couple of pixels visual adjustment */
+  font-size: 20px;
+  color: #d9d9d9;
+  text-shadow: 0 -1px 0 #bfbfbf;
+}
+
+#todo-list li .toggle:checked:after {
+  color: #85ada7;
+  text-shadow: 0 1px 0 #669991;
+  bottom: 1px;
+  position: relative;
+}
+
+#todo-list li label {
+  word-break: break-word;
+  padding: 15px;
+  margin-left: 45px;
+  display: block;
+  line-height: 1.2;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -ms-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+#todo-list li.completed label {
+  color: #a9a9a9;
+  text-decoration: line-through;
+}
+
+#todo-list li .destroy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 22px;
+  color: #a88a8a;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#todo-list li .destroy:hover {
+  text-shadow: 0 0 1px #000, 0 0 10px rgba(199, 107, 107, 0.8);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+#todo-list li .destroy:after {
+  content: '✖';
+}
+
+#todo-list li:hover .destroy {
+  display: block;
+}
+
+#todo-list li .edit {
+  display: none;
+}
+
+#todo-list li.editing:last-child {
+  margin-bottom: -1px;
+}
+
+#footer {
+  color: #777;
+  padding: 0 15px;
+  position: absolute;
+  right: 0;
+  bottom: -31px;
+  left: 0;
+  height: 20px;
+  z-index: 1;
+}
+
+#footer:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 31px;
+  left: 0;
+  height: 50px;
+  z-index: -1;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3),
+    0 6px 0 -3px rgba(255, 255, 255, 0.8),
+    0 7px 1px -3px rgba(0, 0, 0, 0.3),
+    0 43px 0 -6px rgba(255, 255, 255, 0.8),
+    0 44px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+#todo-count {
+  float: left;
+  text-align: left;
+}
+
+#filters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+#filters li {
+  display: inline;
+}
+
+#filters li a {
+  color: #83756f;
+  margin: 2px;
+  text-decoration: none;
+}
+
+#filters li a.selected {
+  font-weight: bold;
+}
+
+#clear-completed {
+  float: right;
+  position: relative;
+  line-height: 20px;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 11px;
+  padding: 0 10px;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+#clear-completed:hover {
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+#info {
+  margin: 65px auto 0;
+  color: #a6a6a6;
+  font-size: 12px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+#info a {
+  color: inherit;
+}
+
+/*
+  Hack to remove background from Mobile Safari.
+  Can't use it globally since it destroys checkboxes in Firefox and Opera
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #toggle-all,
+  #todo-list li .toggle {
+    background: none;
+  }
+
+  #todo-list li .toggle {
+    height: 40px;
+  }
+
+  #toggle-all {
+    top: -56px;
+    left: -15px;
+    width: 65px;
+    height: 41px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+.hidden{
+    display:none;
+}
+
+#sync-error, #sync-success {
+  display: none;
+}
+
+[data-sync-state=syncing] #sync-success {
+  display: block;
+}
+
+[data-sync-state=error] #sync-error {
+  display: block;
+}
+
+.svg-wrapper {
+  height: 60px;
+	margin: 0 auto;
+  position: relative;
+  top: 0%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: #19f6e8;
+}
+
+.text {
+  color: #fff;
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 32px;
+  position: relative;
+  top: -48px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.icon {
+	background-color: transparent;
+	border: 0;
+	color: #557eef;
+	cursor: pointer;
+	display: block;
+	font-size: 20px;
+	margin: 3em auto 0 auto;
+	position: relative;
+	width: 9em;
+	height: 9em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.icon:focus {
+	/* This may be anti-A11Y, but just for this demo suppresses the annoyance */
+	outline: 0;
+}
+.icon div {
+	position: absolute;
+}
+.cloud {
+	transition: opacity 0.1s linear;
+}
+/* Cloud */
+.cloud {
+	top: 0;
+	width: 9em;
+	height: 5.8em;
+}
+.puff, .cloud-core {
+	background-color: #fff;
+}
+.puff {
+	border-radius: 50%;
+}
+.puff-1 {
+	top: 2.5em;
+	left: 0;
+	width: 3.3em;
+	height: 3.3em;
+}
+.puff-2 {
+	top: 1em;
+	left: 1.2em;
+	width: 3em;
+	height: 3em;
+}
+.puff-3 {
+	top: 0;
+	left: 3em;
+	width: 4.6em;
+	height: 4.6em;
+}
+.puff-4 {
+	top: 1.8em;
+	left: 5em;
+	width: 4em;
+	height: 4em;
+}
+.puff-5 {
+	top: 2.3em;
+	left: 2.4em;
+	width: 3.5em;
+	height: 3.5em;
+}
+.puff-6 {
+	top: 2.3em;
+	left: 3em;
+	width: 3.5em;
+	height: 3.5em;
+}
+.puff-7 {
+	top: 2.4em;
+	left: 1em;
+	width: 1.8em;
+	height: 1.8em;
+}
+.puff-8 {
+	top: 1.2em;
+	left: 2.5em;
+	width: 2em;
+	height: 2em;
+}
+.puff-9 {
+	top: 1.8em;
+	left: 5.5em;
+	width: 2em;
+	height: 2em;
+}
+.puff-10 {
+	top: 3.6em;
+	left: 3.5em;
+	width: 2.2em;
+	height: 2.2em;
+}
+.cloud-core {
+	top: 1.8em;
+	left: 1.8em;
+	width: 5em;
+	height: 4em;
+}
+.check {
+	top: 0;
+	left: 1.6em;
+	width: 5.8em;
+	height: 5.8em;
+	position: relative;
+	transform: scale(0);
+	z-index: -1;
+}
+.check:before, .check:after {
+	background-color: currentColor;
+	content: "";
+	bottom: 0;
+	display: block;
+	left: 2.5em;
+	position: absolute;
+	width: 0.8em;
+}
+.check:before {
+	height: 3em;
+	transform: rotate(-55deg);
+	transform-origin: 50% 2.6em;
+}
+.check:after {
+	height: 5.5em;
+	transform: rotate(35deg);
+	transform-origin: 50% 5.1em;
+}
+/* Arrow */
+.arrow {
+	top: 3em;
+	left: 0;
+	width: 9em;
+	height: 5.3em;
+}
+.arrow div, .progress {
+	border-radius: 0.4em;
+}
+.arrow div {
+	background-color: currentColor;
+}
+.arrow-stem {
+	bottom: 0;
+	left: 4.1em;
+	width: 0.8em;
+	height: 5.3em;
+	transform-origin: 50% 100%;
+}
+.arrow-l-tip, .arrow-r-tip {
+	left: calc(50% - 0.4em);
+	bottom: 0;
+	width: 2.6em;
+	height: 0.8em;
+	transform-origin: 0.4em 50%;
+}
+.arrow-l-tip {
+	transform: rotate(-135deg);
+}
+.arrow-r-tip {
+	transform: rotate(-45deg);
+}
+.progress {
+	background-color: #fff;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 0.8em;
+}
+
+/* Droplets */
+.preload, .drop {
+	transition: all 0.2s linear;
+}
+.preload {
+	animation: spin 1s linear infinite;
+	opacity: 0;
+	top: 2.9em;
+	left: calc(50% - 1.25em);
+	width: 2.5em;
+	height: 2.5em;
+	z-index: 1;
+}
+.drop {
+	background-color: currentColor;
+	background-image: radial-gradient(0.5em 0.5em at 30% 75%,rgb(255,255,255) 45%, rgba(255,255,255,0) 50%);
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+.drop-1 {
+	transform: scaleY(0.75) rotate(135deg);
+}
+.drop-2 {
+	transform: rotate(120deg) scaleY(0.75) rotate(135deg);
+}
+.drop-3 {
+	transform: rotate(240deg) scaleY(0.75) rotate(135deg);
+}
+
+/** Animation **/
+.waiting, .running {
+	cursor: default;
+}
+/* Waiting */
+.waiting .cloud {
+	opacity: 0.15;
+}
+.waiting .preload {
+	opacity: 1;
+}
+.waiting .drop {
+	border-radius: 0 50% 50% 50%;
+}
+.waiting .drop-1 {
+	transform: translateY(2.5em) scaleY(0.75) rotate(135deg);
+}
+.waiting .drop-2 {
+	transform: rotate(120deg) translateY(2.5em) scaleY(0.75) rotate(135deg);
+}
+.waiting .drop-3 {
+	transform: rotate(240deg) translateY(2.5em) scaleY(0.75) rotate(135deg);
+}
+
+/* Running */
+.running .puff {
+	animation-duration: 0.75s;
+	animation-delay: 2.75s;
+	animation-timing-function: cubic-bezier(.1,.8,.2,.95);
+}
+.running .puff-1 {
+	animation-name: puff1;
+}
+.running .puff-2 {
+	animation-name: puff2;
+}
+.running .puff-3 {
+	animation-name: puff3;
+}
+.running .puff-4 {
+	animation-name: puff4;
+}
+.running .puff-5 {
+	animation-name: puff5;
+}
+.running .puff-6 {
+	animation-name: puff6;
+}
+.running .puff-7 {
+	animation-name: puff7;
+}
+.running .puff-8 {
+	animation-name: puff8;
+}
+.running .puff-9 {
+	animation-name: puff9;
+}
+.running .puff-10 {
+	animation-name: puff10;
+}
+.running .cloud-core {
+	animation: core 2.75s;
+}
+.running .check {
+	animation: check 0.4s 2.75s;
+}
+.running .arrow {
+	animation: arrow 0.125s;
+}
+.running .arrow-stem {
+	animation: arrowStem 0.125s;
+}
+.running .arrow-l-tip {
+	animation: arrowLTip 0.375s 0.125s;
+}
+.running .arrow-r-tip {
+	animation: arrowRTip 0.375s 0.125s;
+}
+.running .progress {
+	animation: filling 2s 0.75s;
+}
+.icon.running div {
+	animation-fill-mode: forwards;
+}
+.icon.running .cloud-core, .icon.running .check, .icon.running .arrow, .icon.running .arrow div, .icon.running .progress {
+	animation-timing-function: linear;
+}
+
+/* Keyframes */
+@keyframes puff1 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(-4em,0) scale(0.1)}
+}
+@keyframes puff2 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(-2em,-2em) scale(0.1)}
+}
+@keyframes puff3 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(2em,-4em) scale(0.1)}
+}
+@keyframes puff4 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(4em,0) scale(0.1)}
+}
+@keyframes puff5 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(-3.5em,3.5em) scale(0.1)}
+}
+@keyframes puff6 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(3.5em,3.5em) scale(0.1)}
+}
+@keyframes puff7 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(-3em,-1.5em) scale(0.1)}
+}
+@keyframes puff8 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(-0.5em,-2em) scale(0.1)}
+}
+@keyframes puff9 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(2em,-2em) scale(0.1)}
+}
+@keyframes puff10 {
+	from {opacity: 1;transform: translate(0) scale(1)}
+	to {opacity: 0;transform: translate(0em,2.5em) scale(0.1)}
+}
+@keyframes core {
+	from {visibility: visible}
+	to {visibility: hidden}
+}
+@keyframes check {
+	from {transform: scale(0)}
+	30% {transform: scale(1.2)}
+	60% {transform: scale(0.9)}
+	to {transform: scale(1)}
+}
+@keyframes arrow {
+	from {transform: translateY(0)}
+	to {transform: translateY(0.7em)}
+}
+@keyframes arrowStem {
+	from {height: 5.3em}
+	to {height: 0.8em}
+}
+@keyframes arrowLTip {
+	from {transform: rotate(-135deg)}
+	50% {width: 2.6em;transform: rotate(-180deg)}
+	to {width: 4.9em;transform: rotate(-180deg)}
+}
+@keyframes arrowRTip {
+	from {transform: rotate(-45deg);}
+	50% {width: 2.6em;transform: rotate(0deg)}
+	to {width: 4.9em;transform: rotate(0deg)}
+}
+@keyframes filling {
+	from {width: 0;}
+	to {width: 100%;}
+}
+@keyframes spin {
+	from {transform: rotate(0deg)}
+	to {transform: rotate(1turn)}
+}
+
+.ms-content {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border: 10px solid #2ea4f2;
+	border-radius: 100%;
+}
+
+.ms-content-inside {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.ms-line-down-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: rotate(0deg);
+	transition: transform 0s ease;
+}
+#ms-download {
+	display: none;
+}
+#ms-download:checked ~ .ms-line-down-container {
+	transform: rotate(-360deg);
+	transition: transform 1.5s ease 1.25s;
+}
+
+.ms-line-down {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	width: 10px;
+	height: 125px;
+	background: #FFFFFF;
+	border-radius: 50px;
+	transition: height .5s ease;
+}
+
+#ms-download:checked ~ .ms-line-down-container .ms-line-down {
+	height: 10px;
+	top: -20px;
+	animation: ms-bounce .5s forwards .55s;
+}
+#ms-download:checked ~ .ms-line-down-container .ms-line-down:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -94px;
+	right: 0;
+	bottom: 0;
+	width: 200px;
+	height: 200px;
+	border: 10px solid transparent;
+	border-radius: 100%;
+	animation: ms-border-fill .5s forwards 3s;
+}
+
+.ms-line-point {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 58px;
+	height: 130px;
+	transition: height .15s ease .45s;
+}
+
+#ms-download:checked ~ .ms-line-point {
+	height: 60px;
+}
+
+#ms-download:checked ~ .ms-line-point:before {
+	transform: rotate(90deg);
+	right: -10px;
+	animation: ms-check-right .25s forwards 3s;
+}
+
+#ms-download:checked ~ .ms-line-point:after {
+	transform: rotate(-90deg);
+	left: -10px;
+	animation: ms-check-left .25s forwards 3s;
+}
+
+.ms-line-point:before,
+.ms-line-point:after {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 75px;
+	bottom: -10px;
+	background: #FFFFFF;
+	border-radius: 50px;
+	transition: transform .15s ease .47s, left .15s ease .47s, right .15s ease .47s;
+}
+
+.ms-line-point:before {
+	right: 0px;
+	transform: rotate(45deg);
+}
+
+.ms-line-point:after {
+	left: 0px;
+	transform: rotate(-45deg);
+}
+
+@keyframes ms-bounce {
+	0% {
+		top: -20px;
+	}
+	25% {
+		top: -250px;
+	}
+	50% {
+		top: -275px;
+	}
+	100% {
+		top: -190px;
+	}
+}
+
+@keyframes ms-check-left {
+	0% {
+		transform: rotate(-90deg);
+		left: -10px;
+		height: 75px;
+	}
+	100% {
+		transform: rotate(-45deg);
+		left: 0px;
+		height: 45px;
+	}
+}
+
+@keyframes ms-check-right {
+	0% {
+		transform: rotate(90deg);
+		right: -10px;
+		height: 75px;
+		bottom: -10px;
+	}
+	100% {
+		transform: rotate(45deg);
+		right: 10px;
+		height: 80px;
+		bottom: -15px;
+	}
+}
+
+@keyframes ms-border-fill {
+	0% {
+		border: 10px solid transparent;
+	}
+	100% {
+		border: 10px solid #FFFFFF;
+	}
+}

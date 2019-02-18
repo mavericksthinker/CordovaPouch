@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-mobile-sample-project",
+  "version": "0.1.0",
+  "description": "Node.js for Mobile Apps sample project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Janea Systems Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "corser": "^2.0.1",
+    "express": "4.15.3",
+    "express-pouchdb": "^2.3.7",
+    "pouchdb-adapter-http": "^6.2.0",
+    "pouchdb-adapter-node-websql": "6.2.0",
+    "pouchdb-core": "6.2.0",
+    "pouchdb-find": "^7.0.0",
+    "pouchdb-mapreduce": "6.2.0",
+    "pouchdb-replication": "6.2.0",
+    "pouchdb-replication-stream": "^1.2.9"
+  }
+}

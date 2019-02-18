@@ -1,0 +1,55 @@
+
+{
+	"buildFiles" : 
+	[
+		"/home/hottab/Documents/CordovaApps/test/platforms/android/src/com/janeasystems/cdvnodejsmobile/jni/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/home/hottab/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/hottab/Documents/CordovaApps/test/platforms/android/.externalNativeBuild/cmake/release/x86 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"libnode-Release-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "libnode",
+			"buildType" : "release",
+			"output" : "/home/hottab/Documents/CordovaApps/test/platforms/android/src/com/janeasystems/cdvnodejsmobile/jni/libnode/bin/x86/libnode.so",
+			"toolchain" : "10426192535504478362"
+		},
+		"nodejs-mobile-cordova-native-lib-Release-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "nodejs-mobile-cordova-native-lib",
+			"buildCommand" : "/home/hottab/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/hottab/Documents/CordovaApps/test/platforms/android/.externalNativeBuild/cmake/release/x86 --target nodejs-mobile-cordova-native-lib",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/home/hottab/Android/Sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/linux-x86_64 --sysroot=/home/hottab/Android/Sdk/ndk-bundle/sysroot  -Dnodejs_mobile_cordova_native_lib_EXPORTS -I/home/hottab/Documents/CordovaApps/test/platforms/android/src/com/janeasystems/cdvnodejsmobile/jni/libnode -isystem /home/hottab/Android/Sdk/ndk-bundle/sources/cxx-stl/llvm-libc++/include -isystem /home/hottab/Android/Sdk/ndk-bundle/sources/android/support/include -isystem /home/hottab/Android/Sdk/ndk-bundle/sources/cxx-stl/llvm-libc++abi/include  -isystem /home/hottab/Android/Sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11  -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "/home/hottab/Documents/CordovaApps/test/platforms/android/src/com/janeasystems/cdvnodejsmobile/jni/native-lib.cpp",
+					"workingDirectory" : "/home/hottab/Documents/CordovaApps/test/platforms/android/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/home/hottab/Android/Sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/linux-x86_64 --sysroot=/home/hottab/Android/Sdk/ndk-bundle/sysroot  -Dnodejs_mobile_cordova_native_lib_EXPORTS -I/home/hottab/Documents/CordovaApps/test/platforms/android/src/com/janeasystems/cdvnodejsmobile/jni/libnode -isystem /home/hottab/Android/Sdk/ndk-bundle/sources/cxx-stl/llvm-libc++/include -isystem /home/hottab/Android/Sdk/ndk-bundle/sources/android/support/include -isystem /home/hottab/Android/Sdk/ndk-bundle/sources/cxx-stl/llvm-libc++abi/include  -isystem /home/hottab/Android/Sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11  -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "/home/hottab/Documents/CordovaApps/test/platforms/android/src/com/janeasystems/cdvnodejsmobile/jni/cordova-bridge.cpp",
+					"workingDirectory" : "/home/hottab/Documents/CordovaApps/test/platforms/android/.externalNativeBuild/cmake/release/x86"
+				}
+			],
+			"output" : "/home/hottab/Documents/CordovaApps/test/platforms/android/build/intermediates/cmake/release/obj/x86/libnodejs-mobile-cordova-native-lib.so",
+			"toolchain" : "10426192535504478362"
+		}
+	},
+	"toolchains" : 
+	{
+		"10426192535504478362" : 
+		{
+			"cCompilerExecutable" : "/home/hottab/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/home/hottab/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+		}
+	}
+}
